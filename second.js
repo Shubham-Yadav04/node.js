@@ -1,10 +1,12 @@
 // concept of import and export 
 
-const shubham={
+exports.shubham={
     name:"shubham",
     profession:"developer",
     aim:"billionaire"
 
 }
+exports.hello =()=>{
+console.log("this method is imported from the second.js")
+}
 
-module.exports=shubham;

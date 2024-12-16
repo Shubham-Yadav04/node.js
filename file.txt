@@ -1,1 +1,1 @@
-hey wanted to edit the content of the file
+hey i have just writed the content in this file using the write method of fs Modulehey lets append something more in this file

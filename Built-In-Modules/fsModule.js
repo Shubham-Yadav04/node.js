@@ -38,3 +38,6 @@ console.log("do you no shubham had mopdified the file.txt ")
 
 fs.writeFileSync('file.txt',"hey wanted to edit the content of the file")
 console.log("updated the file.txt file ")
+
+
+//similarly for append ans appendFileSync 
