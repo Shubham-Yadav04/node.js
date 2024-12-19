@@ -11,7 +11,6 @@ const userDB={
 
 const fsPromises=require('fs').promises;
 const bcrypt= require('bcrypt');
-const { writeFile } = require('fs');
 const path=require('path');
 
 async function authChecker(req,res){

@@ -1,0 +1,2 @@
+this folder contains the code of athentication and registration n which i have used bcrypt to genrate a hashed password based on the users enterd password by using some salt in it  And then i use the concept of JWt to give the user an accesstoken in its cookie using the flag httpOnly to protect it from attacks 
+after that if the accesstoken life will over i will use the refreshtoken present in the user file and if the lifetime or validity of that also get over then user have to login again to generate a new referesh token 
