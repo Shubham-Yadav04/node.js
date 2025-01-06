@@ -14,6 +14,7 @@ server.use(CookieParser());
 server.use('/register',require("./routes/registerRoute"));
 server.use('/login',require("./routes/loginRoute"));
 server.use('/refresh',require('./routes/refreshRoute'));
+server.use('/logout',require('./routes/logOutRoute'));
 //  to  get user in the file 
 server.use(require('./middleware/verifyJWT').verifyJWT);
 server.use('/users',require('./routes/getUserRoute'));

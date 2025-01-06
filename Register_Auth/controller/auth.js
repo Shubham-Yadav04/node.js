@@ -27,6 +27,26 @@ const userExist=userDB.user.find(person=>person.userName===userName);
     //  the user exits in the file then we will check the password with the encrypted password 
     const result= bcrypt.compare(pswd,userExist.Password);
     if(result){
+        //  genrate the refresh token and the access token again on login 
+
+        const accesToken= jwt.sign({
+            //  declaring the payload 
+            "userName":userName
+        } , process.env.ACCESS_TOKEN_SECRET,{
+            expiresIn:'30s'
+    })
+    const refreshToken= jwt.sign({
+        //  declaring the payload 
+        "userName":userName
+    } , process.env.REFRESH_TOKEN_SECRET,{
+        expiresIn:'1d'
+    })
+    //  we have to write the refresh Token in the the userDB 
+    const otherUser= userDB.user.filter(person => person.userName !== req.body.userName);
+const currentUser= {...userExist,RefreshToken :refreshToken}
+await fsPromises.writeFile(path.join(__dirname,"..","model","user"),JSON.stringify(userDB.user));
+    await fsPromises.writeFile
+    res.cookie('jwt',refreshToken,{httpOnly:true,maxAge:24*60*60*1000});
         return res.status(200).json({'message':" You are login successfully"});
     }
     else{
