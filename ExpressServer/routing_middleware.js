@@ -82,7 +82,7 @@ server.listen(Port,()=>{
 
 server.use(express.static('../public'),(request,response)=>{
    response.sendFile(path.join(request.url));
-}) // it is a built in middleWare which search on the given address if the searched file is present at that it is gone executed 
+}) // it is a built in middleWare which search on the given address if the searched file is present at that it is get executed 
 //  CUSTOM MiddleWare : creating our own middleWare;
 
 // server.use((req,res,next)=>{

@@ -46,7 +46,7 @@ const userExist=userDB.user.find(person=>person.userName===userName);
 const currentUser= {...userExist,RefreshToken :refreshToken}
 await fsPromises.writeFile(path.join(__dirname,"..","model","user"),JSON.stringify(userDB.user));
     await fsPromises.writeFile
-    res.cookie('jwt',refreshToken,{httpOnly:true,maxAge:24*60*60*1000});
+    res.cookie('jwt',accessToken,{httpOnly:true,maxAge:24*60*60*1000});
         return res.status(200).json({'message':" You are login successfully"});
     }
     else{
